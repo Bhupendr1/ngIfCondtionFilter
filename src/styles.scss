@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+$primary-color: #2A6DD9;
+$btnText-color: #fff; // Change color here. C'mon, try it! 
+$text-color: mix(#2A6DD9, $primary-color, 64%);
+
+
+.radioClass{
+  display: flex;
+  padding: 6px;
+}
+label {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  input {
+    position: absolute;
+    left: -9999px;
+
+    &:checked+span {
+      background-color: mix(#fff, $primary-color, 84%);
+
+      &:before {
+        box-shadow: inset 0 0 0 0.4375em $primary-color;
+      }
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em; // or something higher...
+    transition: 0.25s ease;
+
+    &:hover {
+      background-color: mix(#fff, $primary-color, 84%);
+    }
+
+    &:before {
+      display: flex;
+      flex-shrink: 0;
+      content: "";
+      background-color: #fff;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      margin-right: 0.375em;
+      transition: 0.25s ease;
+      box-shadow: inset 0 0 0 0.125em $primary-color;
+    }
+  }
+
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="select"],
+input[type="number"],
+input[type="date"],
+input[type="textarea"],
+input[type="radio"],
+.form-select {
+  padding: 12px 19px;
+  box-sizing: border-box;
+  border: 1px solid rgb(44, 104, 198);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 58, 153);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 300ms ease-in-out 0s, color 300ms ease-in-out 0s;
+}
+
+label {
+  text-transform: uppercase;
+  -webkit-box-align: center;
+  color: rgb(0, 58, 153);
+  align-items: center;
+  display: inline-flex;
+  margin-right: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
